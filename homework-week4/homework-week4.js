@@ -7,15 +7,15 @@ for (let i = 0; i < 100; i++) {
 }
 
 // Step 2: create 2 arrays based on odd and even index of main array
-let oddArray = []; // initialize empty odd index array
-let evenArray = []; // initialize empty even index array
+let oddIndexArray = []; // initialize empty odd index array
+let evenIndexArray = []; // initialize empty even index array
 
 for (let index in mainArray) {
   // logical condition to filter odd and even index of main array
   if (index % 2 === 0) {
-    evenArray.push(mainArray[index]);
+    evenIndexArray.push(mainArray[index]);
   } else {
-    oddArray.push(mainArray[index]);
+    oddIndexArray.push(mainArray[index]);
   }
 }
 
@@ -71,45 +71,47 @@ function aggFun(arrayInput) {
   };
 }
 
-let oddAgg = aggFun(oddArray); // variable to store aggregate functions result for odd index array
-let evenAgg = aggFun(evenArray); // variable to store aggregate functions result for even index array
+let oddIndexAgg = aggFun(oddIndexArray); // variable to store aggregate functions result for odd index array
+let evenIndexAgg = aggFun(evenIndexArray); // variable to store aggregate functions result for even index array
 
-// Step 4: additional function to print the overall output
-function compareArray(oddAgg, evenAgg) {
+// Step 4: compare the aggregate functions result of the two arrays
+
+// additional function to print the overall process and final output
+function compareArray(oddIndexAgg, evenIndexAgg) {
   return {
     mainArray,
-    oddArray,
-    evenArray,
-    oddAgg,
-    evenAgg,
+    oddIndexArray,
+    evenIndexArray,
+    oddIndexAgg,
+    evenIndexAgg,
     minFinal:
-      oddAgg.minValue < evenAgg.minValue
-        ? "Array ganjil memiliki nilai minimum lebih kecil dari Array genap"
-        : oddAgg.minValue === evenAgg.minValue
-        ? "Array ganjil dan Array genap memiliki nilai minimum sama besar"
-        : "Array genap memiliki nilai minimum lebih kecil dari Array ganjil",
+      oddIndexAgg.minValue < evenIndexAgg.minValue
+        ? "Array index ganjil memiliki nilai minimum lebih kecil dari array index genap"
+        : oddIndexAgg.minValue === evenIndexAgg.minValue
+        ? "Array index ganjil dan array index genap memiliki nilai minimum sama besar"
+        : "Array index genap memiliki nilai minimum lebih kecil dari array index ganjil",
 
     maxFinal:
-      oddAgg.maxValue > evenAgg.maxValue
-        ? "Array ganjil memiliki nilai maksimum lebih besar dari Array genap"
-        : oddAgg.maxValue === evenAgg.maxValue
-        ? "Array ganjil dan Array genap memiliki nilai maksimum sama besar"
-        : "Array genap memiliki nilai maksimum lebih besar dari Array ganjil",
+      oddIndexAgg.maxValue > evenIndexAgg.maxValue
+        ? "Array index ganjil memiliki nilai maksimum lebih besar dari array index genap"
+        : oddIndexAgg.maxValue === evenIndexAgg.maxValue
+        ? "Array index ganjil dan array index genap memiliki nilai maksimum sama besar"
+        : "Array index genap memiliki nilai maksimum lebih besar dari array index ganjil",
 
     sumFinal:
-      oddAgg.sumValue > evenAgg.sumValue
-        ? "Array ganjil memiliki nilai total lebih besar dari Array genap"
-        : oddAgg.sumValue === evenAgg.sumValue
-        ? "Array ganjil dan Array genap memiliki nilai total sama besar"
-        : "Array genap memiliki nilai total lebih besar dari Array ganjil",
+      oddIndexAgg.sumValue > evenIndexAgg.sumValue
+        ? "Array index ganjil memiliki nilai total lebih besar dari array index genap"
+        : oddIndexAgg.sumValue === evenIndexAgg.sumValue
+        ? "Array index ganjil dan array index genap memiliki nilai total sama besar"
+        : "Array index genap memiliki nilai total lebih besar dari array index ganjil",
 
     averageFinal:
-      oddAgg.averageValue > evenAgg.averageValue
-        ? "Array ganjil memiliki nilai rata-rata lebih besar dari Array genap"
-        : oddAgg.averageValue === evenAgg.averageValue
-        ? "Array ganjil dan Array genap memiliki nilai rata-rata sama besar"
-        : "Array genap memiliki nilai rata-rata lebih besar dari Array ganjil",
+      oddIndexAgg.averageValue > evenIndexAgg.averageValue
+        ? "Array index ganjil memiliki nilai rata-rata lebih besar dari array index genap"
+        : oddIndexAgg.averageValue === evenIndexAgg.averageValue
+        ? "Array index ganjil dan array index genap memiliki nilai rata-rata sama besar"
+        : "Array index genap memiliki nilai rata-rata lebih besar dari array index ganjil",
   };
 }
 
-console.log(compareArray(oddAgg, evenAgg));
+console.log(compareArray(oddIndexAgg, evenIndexAgg));
