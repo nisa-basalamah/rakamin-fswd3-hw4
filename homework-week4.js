@@ -10,6 +10,7 @@ for (let i = 0; i < 100; i++) {
 let oddIndexArray = []; // initialize empty odd index array
 let evenIndexArray = []; // initialize empty even index array
 
+// suggestion: make it into function
 for (let index in mainArray) {
   // logical condition to filter odd and even index of main array
   if (index % 2 === 0) {
